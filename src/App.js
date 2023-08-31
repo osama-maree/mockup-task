@@ -40,7 +40,10 @@ function SingleMockupBox(props) {
       </div>
       <div>
         {props.checked ? (
-          <RxCheckCircled className="icon" style={{ color: "#198754" }} />
+          <RxCheckCircled
+            className="icon"
+            style={{ color: "rgb(75,181,67)" }}
+          />
         ) : (
           <div className="iconCircle"></div>
         )}
