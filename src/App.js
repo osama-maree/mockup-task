@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+
+const mockupData = [
+  { name: "Corolien Bloeme", clicked: false },
+  { name: "Sun Jun", clicked: true },
+  { name: "Song Bao", clicked: false},
+  { name: "Olivia Arribas", clicked: true },
+  { name: "Bonginkosi Mdladlana", clicked: false },
+  { name:"Arina Belomestnykh", clicked: true },
+  { name: "Jacqueline Likoki", clicked: true },
+];
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div></div>;
 }
 
 export default App;
