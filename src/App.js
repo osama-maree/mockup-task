@@ -12,6 +12,10 @@ function Mockup({ mockupData }) {
         <h5>Find members</h5>
       </div>
       <MockupBox mockupData={mockupData} />
+      <footer>
+        <MyButton text="Cancel" customClass="cancel" />
+        <MyButton text="Save" customClass="save" />
+      </footer>
     </>
   );
 }
@@ -44,8 +48,8 @@ function SingleMockupBox(props) {
     </div>
   );
 }
-function MyButton({ background, color }) {
-  return <>myButton</>;
+function MyButton({ customClass, text }) {
+  return <button className={customClass}>{text}</button>;
 }
 
 const mockupData = [
