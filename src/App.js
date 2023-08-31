@@ -9,7 +9,16 @@ function Mockup({ mockupData }) {
   );
 }
 function MockupBox({ mockupData }) {
-  return <>moukup box</>;
+  return (
+    <>
+      {mockupData.map((mockup, indx) => (
+        <SingleMockupBox name={mockup.name} key={indx} />
+      ))}
+    </>
+  );
+}
+function SingleMockupBox(props) {
+  return <>{props.name}</>;
 }
 function MyButton({ background, color }) {
   return <>myButton</>;
@@ -25,9 +34,11 @@ const mockupData = [
   { name: "Jacqueline Likoki", clicked: true },
 ];
 function App() {
-  return <div>
-    <Mockup mockupData={mockupData}/>
-  </div>;
+  return (
+    <div>
+      <Mockup mockupData={mockupData} />
+    </div>
+  );
 }
 
 export default App;
