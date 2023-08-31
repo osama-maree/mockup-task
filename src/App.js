@@ -1,9 +1,16 @@
 import "./App.css";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BiSolidUser } from "react-icons/bi";
+
+import { RxCheckCircled } from "react-icons/rx";
 function Mockup({ mockupData }) {
   return (
     <>
-      <h3>Add members to Front-end development team</h3>
-      <div>Find members</div>
+      <h4>Add members to Front-end development team</h4>
+      <div className="searchItem">
+        <AiOutlineSearch className="me-5" />
+        <h5>Find members</h5>
+      </div>
       <MockupBox mockupData={mockupData} />
     </>
   );
@@ -12,13 +19,30 @@ function MockupBox({ mockupData }) {
   return (
     <>
       {mockupData.map((mockup, indx) => (
-        <SingleMockupBox name={mockup.name} key={indx} />
+        <SingleMockupBox
+          name={mockup.name}
+          checked={mockup.clicked}
+          key={indx}
+        />
       ))}
     </>
   );
 }
 function SingleMockupBox(props) {
-  return <>{props.name}</>;
+  return (
+    <div className={`singleBox ${props.checked ? "" : "gray-color"}`}>
+      <div className="leftItem">
+        <BiSolidUser className="me-5" /> <div>{props.name}</div>
+      </div>
+      <div>
+        {props.checked ? (
+          <RxCheckCircled className="icon" style={{ color: "#198754" }} />
+        ) : (
+          <div className="iconCircle"></div>
+        )}
+      </div>
+    </div>
+  );
 }
 function MyButton({ background, color }) {
   return <>myButton</>;
@@ -35,7 +59,7 @@ const mockupData = [
 ];
 function App() {
   return (
-    <div>
+    <div className="app">
       <Mockup mockupData={mockupData} />
     </div>
   );
